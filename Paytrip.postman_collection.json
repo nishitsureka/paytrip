@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "fddc5751-abf2-41c8-8684-2fdb90545adb",
+		"name": "Paytrip",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12509035"
+	},
+	"item": [
+		{
+			"name": "Paytrip API",
+			"item": [
+				{
+					"name": "Customer Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiSource",
+								"value": "{{apiSource}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":7411322032,\r\n    \"password\":\"Ni$hit007\"\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/v1/login",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiSource",
+								"value": "{{apiSource}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":7411322032,\r\n    \"password\":\"Ni$hit007\"\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/v1/forgot-password",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiSource",
+								"value": "{{apiSource}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\": 7411322032,\r\n    \"token\": \"token_received_via_sms\",\r\n    \"password\": \"new_password\",\r\n    \"password_confirmation\": \"new_password\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/v1/reset-password",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiSource",
+								"value": "{{apiSource}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{apiUrl}}/api/profile",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiSource",
+								"value": "{{apiSource}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":7411322032,\r\n    //\"email\":\"nishitsurekha@gmail.com\",\r\n    \"password\":\"Ni$hit007\",\r\n    \"password_confirmation\":\"Ni$hit007\"\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/register",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Register Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apiSource",
+								"value": "{{apiSource}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":7411322032,\r\n    \"otp\":483099\r\n}"
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/verify-otp",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
